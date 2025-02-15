@@ -19,7 +19,8 @@ packages:
 esphome:
   name: $device_name
   friendly_name: $friendly_name
-  # the rest of your config file
+
+# the rest of your config file
 ```
 
 # What does `common.yaml` include

@@ -49,14 +49,10 @@ button:
   - platform: restart
     name: $device_name Restart
     icon: "mdi:restart"
-ota:
-  - platform: esphome
-    password: !secret ota_pwd
-    safe_mode: True
+
 logger:
-  level: DEBUG
-api:
-  password: !secret api_pwd
+  level: INFO
+
 web_server:
   port: 80
 
