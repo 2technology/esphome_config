@@ -10,8 +10,13 @@ substitutions:
 packages:
   common_files:
     url: https://github.com/2technology/esphome_config
-    ref: main 
+    ref: main
     files: [common/common.yaml,
-            common/fonts.yaml, # optional
+            common/fonts.yaml   #optional
     ]
+
+esphome:
+  name: $device_name
+  friendly_name: $friendly_name
+  # the rest of your config file
 ```
