@@ -43,7 +43,6 @@ text_sensor:
 binary_sensor:
   - platform: status
     name: "$device_name Status"
-    id: status
     icon: "mdi:chip"
 button:
   - platform: restart
