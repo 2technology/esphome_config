@@ -1,1 +1,1 @@
-# esphome_config
+# esphome config

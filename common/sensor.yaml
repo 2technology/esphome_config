@@ -1,0 +1,27 @@
+sensor:
+  - platform: wifi_signal
+    id: wifi_s
+    name: "${friendly_name} Wifi Signal"
+    icon: "mdi:wifi"
+    update_interval: 60s
+    unit_of_measurement: 'dB'
+    accuracy_decimals: 0
+  - platform: template
+    id: wifi_quality
+    name: "${friendly_name} Wifi Quality"
+    icon: "mdi:wifi"
+    update_interval: 60s
+    unit_of_measurement: '%'
+    accuracy_decimals: 0
+    lambda: |-
+      if (id(wifi_s).state < -92.0)
+        return 100.0;
+      if (id(wifi_s).state > -21.0)
+        return 1.0;
+      else
+        return round(( -0.0154 * id(wifi_s).state * id(wifi_s).state )-( 0.3794 * id(wifi_s).state ) + 98.182 );
+  - platform: uptime
+    id: uptime_s
+    name: "${friendly_name} Uptime"
+    icon: "mdi:timer"
+    update_interval: 60s
