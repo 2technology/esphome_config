@@ -1,6 +1,6 @@
-# esphome config
+# Simplify your esphome config with _packages_
 
-### Put this in your main config file
+### Use this github package to simplify your Esphome configuration files that imports common functions (ESP32-devices)
 
 ```yaml
 substitutions:
@@ -11,8 +11,9 @@ packages:
   common_files:
     url: https://github.com/2technology/esphome_config
     ref: main
-    files: [common/common.yaml,
-            common/fonts.yaml   #optional
+    refresh: 1d
+    files: [common/fonts.yaml,
+            common/common.yaml
     ]
 
 esphome:
@@ -20,3 +21,29 @@ esphome:
   friendly_name: $friendly_name
   # the rest of your config file
 ```
+
+# What does `common.yaml` include
+
+The `common.yaml` file in the `2technology/esphome_config` repository defines several sensors, text sensors, binary sensors, and buttons for ESPHome configurations:
+
+- **Sensors:**
+  - WiFi signal strength (`wifi_s`)
+  - WiFi quality (`wifi_quality`)
+  - Device uptime (`uptime_s`)
+
+- **Text Sensors:**
+  - ESPHome version
+  - WiFi info (IP address, SSID, BSSID)
+
+- **Binary Sensors:**
+  - Device status
+
+- **Buttons:**
+  - Restart device
+
+- **OTA:**
+  - ESPHome OTA with password protection
+
+
+# Exposed Home Assistant Entities
+![Exposed Home Assistant Entities](images/common_screenshot_home_assistant.png)
