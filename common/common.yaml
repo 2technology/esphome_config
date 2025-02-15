@@ -32,10 +32,13 @@ text_sensor:
   - platform: wifi_info
     ip_address:
       name: "${friendly_name} IP Address"
+      icon: "mdi:ip"
     ssid:
-      name: "${friendly_name} Connected SSID"
+      name: "${friendly_name} SSID"
+      icon: "mdi:router-wireless"
     bssid:
-      name: "${friendly_name} Connected BSSID"
+      name: "${friendly_name} BSSID"
+      icon: "mdi:router-network-wireless"
 binary_sensor:
   - platform: status
     name: "$device_name Status"
