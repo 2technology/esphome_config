@@ -25,6 +25,7 @@ sensor:
     name: "${friendly_name} Uptime"
     icon: "mdi:timer"
     update_interval: 60s
+    unit_of_measurement: 's'
 text_sensor:
   - platform: version
     name: "$device_name ESPHome Version"
@@ -42,16 +43,22 @@ text_sensor:
 binary_sensor:
   - platform: status
     name: "$device_name Status"
+    id: status
+    icon: "mdi:chip"
 button:
   - platform: restart
     name: $device_name Restart
+    icon: "mdi:restart"
 ota:
   - platform: esphome
     password: !secret ota_pwd
-
-
-
-
+    safe_mode: True
+logger:
+  level: DEBUG
+api:
+  password: !secret api_pwd
+web_server:
+  port: 80
 
 
 

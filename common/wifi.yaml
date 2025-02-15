@@ -1,0 +1,10 @@
+# Common configuration for wifi networks and fallback AP
+wifi:
+  networks:
+  - ssid: !secret wifi_ssid
+    password: !secret wifi_pwd
+#  - ssid: !secret wifi_ssid2
+#    password: !secret wifi_pwd2
+  ap:
+    ssid: !secret wifi_fallback_ssid
+    password: !secret wifi_fallback_password
