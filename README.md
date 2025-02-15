@@ -10,9 +10,8 @@ substitutions:
 packages:
   common_files:
     url: https://github.com/2technology/esphome_config
-    ref: main # optional
-    files: [common/sensor.yaml,
-            common/fonts.yaml,
-            common/text_sensor.yaml
+    ref: main 
+    files: [common/common.yaml,
+            common/fonts.yaml, # optional
     ]
 ```
