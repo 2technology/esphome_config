@@ -25,3 +25,34 @@ sensor:
     name: "${friendly_name} Uptime"
     icon: "mdi:timer"
     update_interval: 60s
+text_sensor:
+  - platform: version
+    name: "$device_name ESPHome Version"
+    hide_timestamp: true
+  - platform: wifi_info
+    ip_address:
+      name: "${friendly_name} IP Address"
+    ssid:
+      name: "${friendly_name} Connected SSID"
+    bssid:
+      name: "${friendly_name} Connected BSSID"
+binary_sensor:
+  - platform: status
+    name: "$device_name Status"
+button:
+  - platform: restart
+    name: $device_name Restart
+ota:
+  - platform: esphome
+    password: !secret ota_pwd
+
+
+
+
+
+
+
+
+
+
+
